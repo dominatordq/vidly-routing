@@ -23,7 +23,7 @@ class RegisterForm extends Form {
         catch (ex) {
             if (ex.response && ex.response.status === 400) {  // the client does something wrong
                 const errors = {...this.state.errors};
-                errors.username = ex.response.data;
+                errors.username = ex.response.data; // get the error from the server
                 this.setState({ errors });
             }
         }
