@@ -1,7 +1,7 @@
 import React from 'react';
 import Joi from 'joi-browser';
 import Form from './common/form';
-import { login } from '../services/authService';
+import auth from '../services/authService';
 
 class LoginForm extends Form {
     // username = React.createRef();
@@ -18,7 +18,7 @@ class LoginForm extends Form {
     doSubmit = async () => {
         try {
             const { data } = this.state;  
-            await login(data.username, data.password); // get the json web token
+            await auth.login(data.username, data.password); // get the json web token
             // this.props.history.push('/');
             window.location = '/';  // simulates a full reload of the application
         }
