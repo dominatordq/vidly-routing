@@ -5,6 +5,8 @@ import { apiUrl } from '../config.json';
 const endpoint = apiUrl + '/auth';
 const tokenKey = 'token';
 
+http.setJwt(getJwt());
+
 export async function login(email, password) {
     const { data: jwt } = await http.post(endpoint, { email, password });
     localStorage.setItem(tokenKey, jwt); // store json web token in local browser storage
