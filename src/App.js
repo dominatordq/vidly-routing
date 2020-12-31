@@ -18,7 +18,7 @@ class App extends Component {
 
   componentDidMount() {
     try {
-      const jwt = localStorage.getItem('token');  // gets the JWT from local storage
+      const jwt = localStorage.getItem("token");  // gets the JWT from local storage
       const user = jwtDecode(jwt);  // get the current user based on their JWT
       this.setState({ user });
     }
