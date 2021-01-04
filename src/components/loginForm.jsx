@@ -20,7 +20,9 @@ class LoginForm extends Form {
             const { data } = this.state;  
             await auth.login(data.username, data.password); // get the json web token
             // this.props.history.push('/');
-            window.location = '/';  // simulates a full reload of the application
+
+            const { state } = this.props.location;
+            window.location = state ? state.from.pathname : '/';  // reload either at the current location or home page
         }
         catch (ex) {
             if (ex.response && ex.response.status === 400) {
