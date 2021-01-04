@@ -2,6 +2,7 @@ import React from 'react';
 import Joi from 'joi-browser';
 import Form from './common/form';
 import auth from '../services/authService';
+import { Redirect } from 'react-router-dom';
 
 class LoginForm extends Form {
     // username = React.createRef();
@@ -35,6 +36,9 @@ class LoginForm extends Form {
     }
 
     render() { 
+        if (auth.getCurrentUser()) return <Redirect to="/" /> // if user is logged in and types the link to login page,
+                                                              // will automatically redirect to the homepage
+
         return ( 
             <div>
                 <h1>Login</h1>
