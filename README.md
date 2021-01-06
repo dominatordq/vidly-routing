@@ -9,3 +9,5 @@ _**/
 
 - BEFORE RUNNING THIS APP: be sure to navigate to the vidly-api-node folder, and type 'npm start' in the terminal.
 - In the vidly-routing app, the full list of npm scripts can be found in package.json.
+- To build this app in a production environment, type command 'npm run build'.
+- To run the app in production, first install serve (npm i -g serve) and execute the command 'serve -s build'.
