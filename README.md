@@ -12,4 +12,4 @@ _**/
 - To build this app in a production environment, type command 'npm run build'.
 - To run the app in production, first install serve (npm i -g serve) and execute the command 'serve -s build'.
 
-- vidly-api-node backend is hosted on heroku at this link: https://stark-atoll-95354.herokuapp.com/
+- vidly-api-node backend is hosted on heroku at this link: https://glacial-ravine-53262.herokuapp.com/
