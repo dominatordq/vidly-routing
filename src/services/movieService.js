@@ -1,14 +1,13 @@
 import http from './httpService';
-import { apiUrl } from '../config.json';
 
-const endpoint = apiUrl + "/movies";
+const apiEndpoint = process.env.REACT_APP_API_URL + "/movies";
 
 function movieUrl(id) {  // helper function to get endpoint of a specific movie
-    return `${endpoint}/${id}`;
+    return `${apiEndpoint}/${id}`;
 }
 
 export function getMovies() {
-    return http.get(endpoint)
+    return http.get(apiEndpoint)
 }
 
 export function getMovie(movieId) {
@@ -22,7 +21,7 @@ export function saveMovie(movie) {
         return http.put(movieUrl(movie._id), body);
     }
 
-    return http.post(endpoint, movie);
+    return http.post(apiEndpoint, movie);
 }
 
 export function deleteMovie(movieId) {
